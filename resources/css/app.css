@@ -1,0 +1,441 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #06080D;
+    color: #F8FAFC;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, .font-heading {
+    font-family: 'Syne', 'Montserrat', sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Custom Metallic & Peugeot Brand Palette */
+:root {
+  --peugeot-blue: #00205B;
+  --peugeot-navy: #0B132B;
+  --peugeot-cyan: #00A3FF;
+  --peugeot-gold: #D4AF37;
+  --peugeot-red: #ED2939;
+  --peugeot-dark: #06080D;
+}
+
+/* Glassmorphism & Metallic Surfaces */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(11, 19, 43, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(0, 32, 91, 0.4) 100%);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 163, 255, 0.25);
+  box-shadow: 0 20px 50px -10px rgba(0, 163, 255, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border-color: rgba(0, 163, 255, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 163, 255, 0.3), 0 0 20px rgba(0, 163, 255, 0.1);
+}
+
+/* Studio Lighting & Glow Animations */
+@keyframes studioPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-studio-pulse {
+  animation: studioPulse 8s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Shimmer Highlight Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #FFFFFF 0%, #00A3FF 25%, #FFFFFF 50%, #D4AF37 75%, #FFFFFF 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Custom Metallic Gradient Border */
+.metallic-border {
+  position: relative;
+}
+.metallic-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(0,163,255,0.4), rgba(255,255,255,0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06080D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+  border: 2px solid #06080D;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00205B;
+}
+
+/* French Flag Accent Ribbon */
+.french-accent {
+  background: linear-gradient(90deg, #002395 0%, #002395 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #ED2939 66.6%, #ED2939 100%);
+}
+
+/* ==========================================================================
+   LIGHT MODE DESIGN SYSTEM
+   High contrast, accessible, and elegant Peugeot luxury aesthetic
+   ========================================================================== */
+
+html.light-mode, body.light-mode {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+/* Sections */
+html.light-mode section, body.light-mode section {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light-mode section:nth-of-type(even), body.light-mode section:nth-of-type(even) {
+  background-color: #F1F5F9 !important;
+}
+
+/* Subtle background glows softened in light mode */
+html.light-mode .animate-studio-pulse,
+html.light-mode [class*="blur-[140px]"],
+html.light-mode [class*="blur-[150px]"],
+html.light-mode [class*="blur-[120px]"] {
+  opacity: 0.12 !important;
+}
+
+/* Header & Navigation */
+html.light-mode header, body.light-mode header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light-mode header a,
+html.light-mode header nav a,
+html.light-mode header button:not(.btn-cta):not([class*="bg-gradient-to-r"]) {
+  color: #1E293B !important;
+}
+
+html.light-mode header a:hover,
+html.light-mode header nav a:hover {
+  color: #0055A5 !important;
+}
+
+/* Glass Panels & Cards */
+html.light-mode .glass-panel,
+body.light-mode .glass-panel {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 32, 91, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light-mode .glass-card-hover:hover {
+  background: #FFFFFF !important;
+  border-color: #93C5FD !important;
+  box-shadow: 0 20px 35px -10px rgba(0, 85, 165, 0.15), 0 0 15px rgba(0, 163, 255, 0.08) !important;
+}
+
+/* Headings & Text Defaults */
+html.light-mode h1, html.light-mode h2, html.light-mode h3, html.light-mode h4, html.light-mode h5,
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4, body.light-mode h5 {
+  color: #0F172A !important;
+}
+
+html.light-mode p, body.light-mode p {
+  color: #334155 !important;
+}
+
+/* Dynamic text classes adaptation inside light mode */
+html.light-mode .text-slate-200:not([class*="bg-gradient-to-r"] *):not(button.bg-\[\#00205B\] *):not(.bg-\[\#00205B\] *):not(.btn-cta *) {
+  color: #1E293B !important;
+}
+
+html.light-mode .text-slate-300:not([class*="bg-gradient-to-r"] *):not(button.bg-\[\#00205B\] *):not(.bg-\[\#00205B\] *):not(.btn-cta *) {
+  color: #334155 !important;
+}
+
+html.light-mode .text-slate-400:not([class*="bg-gradient-to-r"] *):not(button.bg-\[\#00205B\] *):not(.bg-\[\#00205B\] *):not(.btn-cta *) {
+  color: #64748B !important;
+}
+
+html.light-mode .text-white:not([class*="bg-gradient-to-r"] *):not(button.bg-\[\#00205B\] *):not(.bg-\[\#00205B\] *):not(.btn-cta *):not([class*="bg-emerald"] *):not([class*="bg-blue"] *):not([class*="bg-cyan"] *) {
+  color: #0F172A !important;
+}
+
+/* High contrast Peugeot Blue for cyan text on light surfaces */
+html.light-mode .text-cyan-300:not([class*="bg-gradient-to-r"] *):not(button.bg-\[\#00205B\] *):not(.bg-\[\#00205B\] *),
+html.light-mode .text-cyan-400:not([class*="bg-gradient-to-r"] *):not(button.bg-\[\#00205B\] *):not(.bg-\[\#00205B\] *) {
+  color: #0055A5 !important;
+}
+
+/* Shimmer Brand Gradient */
+html.light-mode .shimmer-text, body.light-mode .shimmer-text {
+  background: linear-gradient(90deg, #00205B 0%, #0055A5 35%, #00A3FF 50%, #00205B 80%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* Inner spec boxes, pill rows, and sub-panels */
+html.light-mode .bg-slate-950,
+html.light-mode .bg-slate-950\/90,
+html.light-mode .bg-slate-950\/80,
+html.light-mode .bg-slate-950\/70,
+html.light-mode .bg-slate-950\/60,
+html.light-mode .bg-slate-950\/40,
+html.light-mode .bg-slate-900,
+html.light-mode .bg-slate-900\/90,
+html.light-mode .bg-slate-900\/80,
+html.light-mode .bg-slate-900\/70,
+html.light-mode .bg-slate-900\/60,
+html.light-mode .bg-slate-900\/40 {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* Dark borders softened in light mode */
+html.light-mode .border-slate-800,
+html.light-mode .border-slate-800\/80,
+html.light-mode .border-slate-800\/60,
+html.light-mode .border-slate-700,
+html.light-mode .border-slate-700\/80,
+html.light-mode .border-slate-900 {
+  border-color: #E2E8F0 !important;
+}
+
+/* Buttons & CTAs preservation */
+html.light-mode .btn-cta,
+html.light-mode button[class*="bg-gradient-to-r from-[#00205B]"],
+html.light-mode a[class*="bg-gradient-to-r from-[#00205B]"],
+html.light-mode button[class*="bg-gradient-to-r from-cyan-500"],
+html.light-mode a[class*="bg-gradient-to-r from-cyan-500"],
+html.light-mode button.bg-\[\#00205B\],
+html.light-mode a.bg-\[\#00205B\] {
+  color: #FFFFFF !important;
+}
+
+html.light-mode .btn-cta *,
+html.light-mode button[class*="bg-gradient-to-r from-[#00205B]"] *,
+html.light-mode a[class*="bg-gradient-to-r from-[#00205B]"] *,
+html.light-mode button[class*="bg-gradient-to-r from-cyan-500"] *,
+html.light-mode a[class*="bg-gradient-to-r from-cyan-500"] *,
+html.light-mode button.bg-\[\#00205B\] *,
+html.light-mode a.bg-\[\#00205B\] * {
+  color: #FFFFFF !important;
+}
+
+/* Secondary Buttons */
+html.light-mode a[href="#catalog"].bg-slate-900\/80,
+html.light-mode button.bg-slate-900:not(.btn-cta) {
+  background-color: #F1F5F9 !important;
+  color: #1E293B !important;
+  border-color: #CBD5E1 !important;
+}
+html.light-mode a[href="#catalog"].bg-slate-900\/80:hover,
+html.light-mode button.bg-slate-900:not(.btn-cta):hover {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* Catalog bike image card backdrop */
+html.light-mode #catalog .h-60.w-full {
+  background: linear-gradient(180deg, #F1F5F9 0%, #FFFFFF 100%) !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Badges */
+html.light-mode .bg-\[\#00205B\]\/80,
+html.light-mode .bg-\[\#00205B\]\/60 {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+  color: #0055A5 !important;
+}
+html.light-mode .bg-\[\#00205B\]\/80 span,
+html.light-mode .bg-\[\#00205B\]\/60 span {
+  color: #0055A5 !important;
+}
+
+/* Showroom Google Map Iframe: Clear normal map in light mode */
+html.light-mode #showroom iframe {
+  filter: none !important;
+}
+
+/* Showroom Action buttons & info icons */
+html.light-mode #showroom .p-3.rounded-xl.bg-slate-900 {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+  color: #0055A5 !important;
+}
+html.light-mode #showroom a.bg-cyan-950\/60 {
+  background-color: #EFF6FF !important;
+  color: #0055A5 !important;
+  border-color: #BFDBFE !important;
+}
+html.light-mode #showroom a.bg-cyan-950\/60:hover {
+  background-color: #DBEAFE !important;
+}
+
+/* Heritage Timeline & Comparison */
+html.light-mode #heritage .heritage-vintage-card,
+html.light-mode #heritage .bg-slate-950\/70 {
+  background-color: #FFFBEB !important;
+  border-color: #FDE68A !important;
+}
+html.light-mode #heritage .heritage-vintage-card *,
+html.light-mode #heritage .bg-slate-950\/70 * {
+  color: #78350F !important;
+}
+
+html.light-mode #heritage .heritage-modern-card,
+html.light-mode #heritage .bg-\[\#00205B\]\/40 {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+}
+html.light-mode #heritage .heritage-modern-card *,
+html.light-mode #heritage .bg-\[\#00205B\]\/40 * {
+  color: #1E3A8A !important;
+}
+
+/* EMI Calculator Controls */
+html.light-mode #finance select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+html.light-mode #finance select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+html.light-mode #finance input[type="range"] {
+  background-color: #CBD5E1 !important;
+}
+html.light-mode #finance .lg\:col-span-5.glass-panel {
+  background: #FFFFFF !important;
+  border-color: #BFDBFE !important;
+}
+html.light-mode #finance .bg-slate-950\/90 {
+  background-color: #EFF6FF !important;
+  border-color: #BFDBFE !important;
+}
+html.light-mode #finance .bg-slate-950\/90 .text-cyan-400 {
+  color: #0055A5 !important;
+}
+
+/* Inputs & Form Controls in Light Mode */
+html.light-mode input[type="text"],
+html.light-mode input[type="tel"],
+html.light-mode input[type="email"],
+html.light-mode input[type="date"],
+html.light-mode input[type="number"],
+html.light-mode select,
+html.light-mode textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Test Ride & Product Details Modals in Light Mode */
+html.light-mode .fixed.inset-0 .glass-panel {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+html.light-mode .fixed.inset-0 .bg-\[\#090B10\],
+html.light-mode .fixed.inset-0 .bg-\[\#0B132B\] {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+html.light-mode .fixed.inset-0 .bg-\[\#0B132B\]\/90 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #E2E8F0 !important;
+}
+html.light-mode .fixed.inset-0 .bg-slate-900,
+html.light-mode .fixed.inset-0 .bg-slate-900\/90,
+html.light-mode .fixed.inset-0 .bg-slate-950\/90,
+html.light-mode .fixed.inset-0 .bg-slate-950\/80 {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+html.light-mode .fixed.inset-0 label {
+  color: #334155 !important;
+}
+html.light-mode .fixed.inset-0 button.bg-slate-900 {
+  background-color: #F1F5F9 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}

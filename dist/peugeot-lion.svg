@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+  <!-- Outer Shield Frame -->
+  <path d="M50 2L95 20V60C95 90 50 115 50 115C50 115 5 90 5 60V20L50 2Z" fill="#090B10" stroke="url(#shieldGrad)" stroke-width="3"/>
+  
+  <!-- Metallic Inner Shield -->
+  <path d="M50 7L89 23V58C89 84 50 107 50 107C50 107 11 84 11 58V23L50 7Z" fill="url(#bgGrad)" />
+
+  <!-- Stylized Peugeot Lion Head Silhouette -->
+  <g fill="url(#goldGrad)">
+    <!-- Lion Mane & Crest -->
+    <path d="M48 22C42 22 36 26 36 32C36 35 38 37 40 38C36 40 33 44 33 50C33 58 39 64 47 65C41 68 37 74 37 80C42 78 48 76 53 72C50 78 47 84 45 90C53 87 61 80 66 72C69 67 71 61 71 55C71 45 65 37 57 32C60 30 62 26 62 22C56 22 51 22 48 22Z"/>
+    <!-- Eye & Facets -->
+    <path d="M44 40L50 36L48 42Z" fill="#090B10"/>
+    <!-- Crown / Apex Teeth -->
+    <path d="M46 25L52 19L56 25Z"/>
+  </g>
+
+  <!-- PEUGEOT Text Banner -->
+  <text x="50" y="98" font-family="'Montserrat', sans-serif" font-weight="900" font-size="10" fill="#E2E8F0" text-anchor="middle" letter-spacing="1.5">PEUGEOT</text>
+  <text x="50" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="5" fill="#00A3FF" text-anchor="middle" letter-spacing="1">MOTOCYCLES</text>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="100" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00A3FF"/>
+      <stop offset="50%" stop-color="#00205B"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="50" y1="7" x2="50" y2="107" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="30" y1="20" x2="70" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+  </defs>
+</svg>

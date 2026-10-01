@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #06080D;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .font-heading {
+    font-family: 'Syne', 'Montserrat', sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Custom Metallic & Peugeot Brand Palette */
+:root {
+  --peugeot-blue: #00205B;
+  --peugeot-navy: #0B132B;
+  --peugeot-cyan: #00A3FF;
+  --peugeot-gold: #D4AF37;
+  --peugeot-red: #ED2939;
+  --peugeot-dark: #06080D;
+}
+
+/* Glassmorphism & Metallic Surfaces */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(11, 19, 43, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(0, 32, 91, 0.4) 100%);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 163, 255, 0.25);
+  box-shadow: 0 20px 50px -10px rgba(0, 163, 255, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border-color: rgba(0, 163, 255, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(0, 163, 255, 0.3), 0 0 20px rgba(0, 163, 255, 0.1);
+}
+
+/* Studio Lighting & Glow Animations */
+@keyframes studioPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-studio-pulse {
+  animation: studioPulse 8s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Shimmer Highlight Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #FFFFFF 0%, #00A3FF 25%, #FFFFFF 50%, #D4AF37 75%, #FFFFFF 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Custom Metallic Gradient Border */
+.metallic-border {
+  position: relative;
+}
+.metallic-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(0,163,255,0.4), rgba(255,255,255,0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06080D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+  border: 2px solid #06080D;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00205B;
+}
+
+/* French Flag Accent Ribbon */
+.french-accent {
+  background: linear-gradient(90deg, #002395 0%, #002395 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #ED2939 66.6%, #ED2939 100%);
+}
