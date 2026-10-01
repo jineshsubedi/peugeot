@@ -1,0 +1,76 @@
+{
+  "_bikesData-CeYPDvEh.js": {
+    "file": "assets/bikesData-CeYPDvEh.js",
+    "name": "bikesData",
+    "imports": [
+      "_shield-check-DyDvpFe8.js"
+    ]
+  },
+  "_shield-check-DyDvpFe8.js": {
+    "file": "assets/shield-check-DyDvpFe8.js",
+    "name": "shield-check",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-0wmVDGwq.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/Pages/Admin/Dashboard.jsx": {
+    "file": "assets/Dashboard-C5nSzYyg.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Admin/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_shield-check-DyDvpFe8.js",
+      "_bikesData-CeYPDvEh.js"
+    ],
+    "css": [
+      "assets/app-0wmVDGwq.css"
+    ]
+  },
+  "resources/js/Pages/Admin/Login.jsx": {
+    "file": "assets/Login-CV0umvyy.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Admin/Login.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_shield-check-DyDvpFe8.js"
+    ],
+    "css": [
+      "assets/app-0wmVDGwq.css"
+    ]
+  },
+  "resources/js/Pages/Home.jsx": {
+    "file": "assets/Home-FoD-6eK9.js",
+    "name": "Home",
+    "src": "resources/js/Pages/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_bikesData-CeYPDvEh.js",
+      "_shield-check-DyDvpFe8.js"
+    ],
+    "css": [
+      "assets/app-0wmVDGwq.css"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DVauWkoF.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Admin/Dashboard.jsx",
+      "resources/js/Pages/Admin/Login.jsx",
+      "resources/js/Pages/Home.jsx"
+    ],
+    "css": [
+      "assets/app-0wmVDGwq.css"
+    ]
+  }
+}
